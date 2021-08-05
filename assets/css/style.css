@@ -1,3 +1,10 @@
+:root {
+  --color1: #1b1464;
+  --color2: rgb(25, 0, 255);
+  --color3: #020202;
+  --color4: rgb(250, 8, 8);
+  --color5: #003b13;
+}
 * {
   box-sizing: border-box;
   padding: 0;
@@ -6,48 +13,246 @@
 
 body {
   font-family: Nunito;
-  font-size: 1rem;
-}
-header {
-  padding: 1rem;
-  position: sticky;
-  top: 0;
-  background-color:white);
-  box-shadow:0 1px 4px rgba( 0,0,0,0.3),0 0 40px rgba(0,0,0,0.1) inset;
-}
-img{
-    height: 80%;
-    padding-top:2rem;
-
 }
 
-header nav {
+/*navbarbaşlangıç*/
+nav {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.navbar-light {
+  background-image: linear-gradient(
+    99.6deg,
+    rgb(255, 255, 255) 10.6%,
+    rgba(242, 227, 234, 1) 32.9%,
+    rgba(234, 202, 213, 1) 52.7%,
+    rgba(242, 227, 234, 1) 72.8%,
+    rgba(242, 227, 234, 1) 81.1%,
+    rgba(255, 255, 255, 1) 102.4%
+  );
+}
+.navbar-light .navbar-nav .nav-link {
+  color: #acb7dd;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.navbar-nav .nav-item {
+  margin: 0 0.5rem 0 0.5rem;
+  position: relative;
+}
+.navbar-light .navbar-nav .telli::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background: #1e2f68;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.5s;
+}
+.navbar-light .navbar-nav .telli:hover::after {
+  width: 100%;
+}
+/*nabvar*/
+
+/*banner başlangıç*/
+
+ /*BANNER START*/
+ .banner {
+  width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  position: relative;
+  background-image: url("../img/yazılı-banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
-li{
-    height: 50%;
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color5);
+  transform: skewX(-15deg);
 }
-
-header nav ul {
-  display: flex;
-  list-style-type: none;
+@media (max-width: 992px) {
+  .banner::before {
+    left: 0;
+    transform: skewX(0deg);
+  }
 }
-header nav ul li a {
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  color: rgb(16, 9, 58);
-  transition: all 0.5s;
+.banner .row {
+  padding: 2rem;
 }
-
-
-
-header nav ul .kayit a:hover i,
-header nav ul .kayit a:hover {
-  background-color: rgb(36, 190, 126);
+.banner .icerik {
+  z-index: 1;
   color: white;
-  border-radius: 0.5rem;
 }
-
+.banner .kutup-yildizi {
+  font-size: 17px;
+}
+.banner button {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  background-color: var(--color4);
+}
+.banner .card {
+  text-align: center;
+  padding-top: 1rem;
+  color: #003b13;
+}
+​
+.banner .card .card-body {
+  color: var(--color4);
+}
+.banner .card i {
+  font-size: 2rem;
+}
+.banner .item a {
+  text-decoration: none;
+}
+.owl-carousel {
+  position: relative;
+  margin: 2rem 0 2rem 0;
+}
+.owl-nav .owl-prev {
+  position: absolute;
+  left: -2rem;
+  top: -3%;
+}
+.owl-nav .owl-next {
+  position: absolute;
+  right: -2rem;
+  top: -3%;
+}
+.owl-nav .owl-next span {
+  font-size: 4rem;
+}
+.owl-nav .owl-prev span {
+  font-size: 4rem;
+}
+.owl-theme .owl-nav .owl-prev:hover {
+  background: none;
+  color: var(--color4);
+}
+.owl-theme .owl-nav .owl-next:hover {
+  background: none;
+  color: var(--color4);
+}
+/*BANNER FINSH*/
+​
+​
+/*PROFIL START*/
+​
+​
+a {
+    text-decoration: none;
+}
+ul,
+li,
+ol {
+    list-style: none;
+}
+.profil {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profil .card { 
+    display: flex; 
+    gap: 4rem;
+    flex-direction: row;
+}
+.profil .card-box{
+    
+    width: 200px;
+    height: 300px;
+    position: relative;
+}
+.profil .card-box:hover .card-box_img{
+    transform: translateY(-100%) rotateX(90deg);
+} 
+.profil .card-box_img {
+    width: inherit;
+    height: inherit;
+    transition: 500ms;
+    transform-origin: bottom;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.profil .card-box_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.profil .card-box_back {
+    width: 100%;
+    height: 100%;
+    background: rgb(73, 25, 34);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform-origin: top;
+    transform: translateY(100%) rotateX(90deg);
+    
+}
+.profil .card-box:hover .card-box_back{
+    transform: translateY(0) rotateX(0);
+}
+.profil .card-box_back p {
+    color: #ffff;
+}
+.profil .card-box_back ul {
+    display: flex;
+    gap: 1rem;
+}
+.card-box_back li a {
+    color: #ffff;    
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid #eee;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 500ms;
+}
+.card-box_back li a:hover{
+    background: #eee;
+    color: #000;
+}
+​
+​
+/*
+.card {
+    &-box {
+        width: 300px;
+        height: 400px;
+        position: relative;
+        &_img {
+            width: inherit;
+            height: inherit;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+*/
+​
+​
+​
+/*PROFIL FINSH*/
+/*banner bitiş*/
